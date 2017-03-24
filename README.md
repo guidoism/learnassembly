@@ -1,4 +1,4 @@
-# Guido Learn's Assembly
+# Guido Learns Assembly
 
 I haven't written assembly since college and even then I didn't really
 get too far into it. I want to learn the low-level details of a couple
