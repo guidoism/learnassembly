@@ -11,6 +11,10 @@ different cpus architectures and I figure this is the best way.
 * 64 bit ARM
 * One of the power sipping ARM processors
 
+## Stuff to think about
+
+* REPL for assembly? Does that even make sense?
+
 ## Resources
 
 * [shellbug](https://github.com/karttoon/shellbug) - Text-based virtual CPU using [Unicorn](http://www.unicorn-engine.org) CPU emulator framework
