@@ -13,4 +13,4 @@ different cpus architectures and I figure this is the best way.
 
 ## Resources
 
-* [shellcode](https://github.com/karttoon/shellbug) - Text-based virtual CPU using [Unicorn](http://www.unicorn-engine.org) CPU emulator framework
+* [shellbug](https://github.com/karttoon/shellbug) - Text-based virtual CPU using [Unicorn](http://www.unicorn-engine.org) CPU emulator framework
