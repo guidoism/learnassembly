@@ -10,6 +10,7 @@ different cpus architectures and I figure this is the best way.
 * Kaby Lake Y-series CPU
 * 64 bit ARM
 * One of the power sipping ARM processors
+* RISC V
 
 ## Stuff to think about
 
