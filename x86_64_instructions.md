@@ -5,9 +5,7 @@ title: Intel x86_64 Instructions
 
 *From 4-24 Vol. 1 Chapter 5 Instruction Set Summary*
 
-## General-Purpose Instructions (5.1)
-
-### Data Transfer Instructions (5.1.1)
+## Data Transfer Instructions (5.1.1)
 
 The data transfer instructions move data between memory and the
 general-purpose and segment registers. They also perform specific
