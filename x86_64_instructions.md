@@ -5,7 +5,7 @@ title: Intel x86_64 Instructions
 
 *From 4-24 Vol. 1 Chapter 5 Instruction Set Summary*
 
-## Data Transfer Instructions (5.1.1)
+## Data Transfer Instructions
 
 The data transfer instructions move data between memory and the
 general-purpose and segment registers. They also perform specific
@@ -47,7 +47,7 @@ conversion.
 * *MOVSX*{:.smallcaps} - Move and sign extend.
 * *MOVZX*{:.smallcaps} - Move and zero extend.
 
-## Binary Arithmetic Instructions (5.1.2)
+## Binary Arithmetic Instructions
 
 The binary arithmetic instructions perform basic binary integer
 computations on byte, word, and doubleword inte- gers located in
@@ -68,7 +68,7 @@ memory and/or the general purpose registers.
 * *NEG*{:.smallcaps} - Negate.
 * *CMP*{:.smallcaps} - Compare.
 
-## Decimal Arithmetic Instructions (5.1.3)
+## Decimal Arithmetic Instructions
 
 The decimal arithmetic instructions perform decimal arithmetic on
 binary coded decimal (BCD) data. DAA Decimal adjust after addition.
@@ -79,7 +79,7 @@ binary coded decimal (BCD) data. DAA Decimal adjust after addition.
 * *AAM*{:.smallcaps} - ASCII adjust after multiplication.
 * *AAD*{:.smallcaps} - ASCII adjust before division.
 
-## Logical Instructions (5.1.4)
+## Logical Instructions
 
 The logical instructions perform basic AND, OR, XOR, and NOT logical
 operations on byte, word, and doubleword values.
@@ -89,7 +89,7 @@ operations on byte, word, and doubleword values.
 * *XOR*{:.smallcaps} - Perform bitwise logical exclusive OR.
 * *NOT*{:.smallcaps} - Perform bitwise logical NOT.
 
-## Shift and Rotate Instructions (5.1.5)
+## Shift and Rotate Instructions
 
 The shift and rotate instructions shift and rotate the bits in word
 and doubleword operands.
@@ -104,7 +104,7 @@ and doubleword operands.
 * *RCR*{:.smallcaps} - Rotate through carry right.
 * *RCL*{:.smallcaps} - Rotate through carry left.
 
-## Bit and Byte Instructions (5.1.6)
+## Bit and Byte Instructions
 
 Bit instructions test and modify individual bits in word and
 doubleword operands. Byte instructions set the value of a byte operand
