@@ -1,3 +1,8 @@
+---
+layout: default
+title: Intel x86_64 Instructions
+---
+
 From 4-24 Vol. 1 Chapter 5 Instruction Set Summary
 
 5.1 GENERAL-PURPOSE INSTRUCTIONS
