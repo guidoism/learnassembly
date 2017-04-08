@@ -45,7 +45,7 @@ conversion.
 * *CWD/CDQ*{:.smallcaps} - Convert word to doubleword/Convert doubleword to quadword.
 * *CBW/CWDE*{:.smallcaps} - Convert byte to word/Convert word to doubleword in EAX register.
 * *MOVSX*{:.smallcaps} - Move and sign extend.
-* *MOVZX*{: smallcaps} - Move and zero extend.
+* *MOVZX*{:.smallcaps} - Move and zero extend.
 
 ## Binary Arithmetic Instructions (5.1.2)
 
