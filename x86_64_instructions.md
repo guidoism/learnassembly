@@ -45,38 +45,29 @@ conversion.
 * *CWD/CDQ*{:.smallcaps} - Convert word to doubleword/Convert doubleword to quadword.
 * *CBW/CWDE*{:.smallcaps} - Convert byte to word/Convert word to doubleword in EAX register.
 * *MOVSX*{:.smallcaps} - Move and sign extend.
+* *MOVZX*{: smallcaps} - Move and zero extend.
 
+## Binary Arithmetic Instructions (5.1.2)
 
+The binary arithmetic instructions perform basic binary integer
+computations on byte, word, and doubleword inte- gers located in
+memory and/or the general purpose registers.
 
+* *ADCX*{:smallcaps} - Unsigned integer add with carry.
+* *ADOX*{:smallcaps} - Unsigned integer add with overflow.
+* *ADD*{:smallcaps} - Integer add.
+* *ADC*{:smallcaps} - Add with carry.
+* *SUB*{:smallcaps} - Subtract.
+* *SBB*{:smallcaps} - Subtract with borrow.
+* *IMUL*{:smallcaps} - Signed multiply.
+* *MUL*{:smallcaps} - Unsigned multiply.
+* *IDIV*{:smallcaps} - Signed divide.
+* *DIV*{:smallcaps} - Unsigned divide.
+* *INC*{:smallcaps} - Increment.
+* *DEC*{:smallcaps} - Decrement.
+* *NEG*{:smallcaps} - Negate.
+* *CMP*{:smallcaps} - Compare.
 
-
-
-
-
-
-
-
-
-
-INSTRUCTION SET SUMMARY
-Vol. 1 5-3
- 
-INSTRUCTION SET SUMMARY
-MOVZX Move and zero extend.
-5.1.2 Binary Arithmetic Instructions
-The binary arithmetic instructions perform basic binary integer computations on byte, word, and doubleword inte- gers located in memory and/or the general purpose registers.
-ADCX Unsigned integer add with carry. ADOX Unsigned integer add with overflow. ADD Integer add.
-ADC Add with carry.
-SUB Subtract.
-SBB Subtract with borrow.
-IMUL Signed multiply.
-MUL Unsigned multiply.
-IDIV Signed divide.
-DIV Unsigned divide.
-INC Increment.
-DEC Decrement.
-NEG Negate.
-CMP Compare.
 5.1.3 Decimal Arithmetic Instructions
 The decimal arithmetic instructions perform decimal arithmetic on binary coded decimal (BCD) data. DAA Decimal adjust after addition.
 DAS Decimal adjust after subtraction.
