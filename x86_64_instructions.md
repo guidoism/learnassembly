@@ -53,20 +53,20 @@ The binary arithmetic instructions perform basic binary integer
 computations on byte, word, and doubleword inte- gers located in
 memory and/or the general purpose registers.
 
-* *ADCX*{:smallcaps} - Unsigned integer add with carry.
-* *ADOX*{:smallcaps} - Unsigned integer add with overflow.
-* *ADD*{:smallcaps} - Integer add.
-* *ADC*{:smallcaps} - Add with carry.
-* *SUB*{:smallcaps} - Subtract.
-* *SBB*{:smallcaps} - Subtract with borrow.
-* *IMUL*{:smallcaps} - Signed multiply.
-* *MUL*{:smallcaps} - Unsigned multiply.
-* *IDIV*{:smallcaps} - Signed divide.
-* *DIV*{:smallcaps} - Unsigned divide.
-* *INC*{:smallcaps} - Increment.
-* *DEC*{:smallcaps} - Decrement.
-* *NEG*{:smallcaps} - Negate.
-* *CMP*{:smallcaps} - Compare.
+* *ADCX*{:.smallcaps} - Unsigned integer add with carry.
+* *ADOX*{:.smallcaps} - Unsigned integer add with overflow.
+* *ADD*{:.smallcaps} - Integer add.
+* *ADC*{:.smallcaps} - Add with carry.
+* *SUB*{:.smallcaps} - Subtract.
+* *SBB*{:.smallcaps} - Subtract with borrow.
+* *IMUL*{:.smallcaps} - Signed multiply.
+* *MUL*{:.smallcaps} - Unsigned multiply.
+* *IDIV*{:.smallcaps} - Signed divide.
+* *DIV*{:.smallcaps} - Unsigned divide.
+* *INC*{:.smallcaps} - Increment.
+* *DEC*{:.smallcaps} - Decrement.
+* *NEG*{:.smallcaps} - Negate.
+* *CMP*{:.smallcaps} - Compare.
 
 5.1.3 Decimal Arithmetic Instructions
 The decimal arithmetic instructions perform decimal arithmetic on binary coded decimal (BCD) data. DAA Decimal adjust after addition.
