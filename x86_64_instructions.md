@@ -17,11 +17,8 @@ conversion.
 * *MOV*{:.smallcaps} - Move data between general-purpose registers; move data between
   memory and general- purpose or segment registers; move immediates to
   general-purpose registers.
-
 * *CMOVE/CMOVZ*{:.smallcaps} - Conditional move if equal/Conditional move if zero.
-
 * *CMOVNE/CMOVNZ*{:.smallcaps} - Conditional move if not equal/Conditional move if not zero.
-
 * *CMOVA/CMOVNBE*{:.smallcaps} - Conditional move if above/Conditional move if not below or equal.
 
 * *CMOVAE/CMOVNB*{:.smallcaps} - Conditional move if above or equal/Conditional move if not below.
