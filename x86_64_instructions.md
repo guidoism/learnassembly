@@ -14,7 +14,7 @@ general-purpose and segment registers. They also perform specific
 operations such as conditional moves, stack access, and data
 conversion.
 
-* MOV - Move data between general-purpose registers; move data between
+* *MOV*{:.smallcaps} - Move data between general-purpose registers; move data between
   memory and general- purpose or segment registers; move immediates to
   general-purpose registers.
 
