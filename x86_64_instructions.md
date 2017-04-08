@@ -68,64 +68,78 @@ memory and/or the general purpose registers.
 * *NEG*{:.smallcaps} - Negate.
 * *CMP*{:.smallcaps} - Compare.
 
-5.1.3 Decimal Arithmetic Instructions
-The decimal arithmetic instructions perform decimal arithmetic on binary coded decimal (BCD) data. DAA Decimal adjust after addition.
-DAS Decimal adjust after subtraction.
-AAA ASCII adjust after addition.
-AAS ASCII adjust after subtraction. AAM ASCII adjust after multiplication. AAD ASCII adjust before division.
-5.1.4 Logical Instructions
-The logical instructions perform basic AND, OR, XOR, and NOT logical operations on byte, word, and doubleword values.
-AND Perform bitwise logical AND.
-OR Perform bitwise logical OR.
-XOR Perform bitwise logical exclusive OR. NOT Perform bitwise logical NOT.
-5.1.5 Shift and Rotate Instructions
-The shift and rotate instructions shift and rotate the bits in word and doubleword operands. SAR Shift arithmetic right.
-SHR Shift logical right.
-SAL/SHL Shift arithmetic left/Shift logical left.
-SHRD Shift right double.
-5-4 Vol. 1
- 
-SHLD Shift left double.
-ROR Rotate right.
-ROL Rotate left.
-RCR Rotate through carry right. RCL Rotate through carry left.
-5.1.6 Bit and Byte Instructions
-Bit instructions test and modify individual bits in word and doubleword operands. Byte instructions set the value of a byte operand to indicate the status of flags in the EFLAGS register.
-BT Bit test.
-BTS Bit test and set.
-BTR Bit test and reset.
-BTC Bit test and complement.
-BSF Bit scan forward.
-BSR Bit scan reverse.
-SETE/SETZ Set byte if equal/Set byte if zero.
-SETNE/SETNZ Set byte if not equal/Set byte if not zero.
-SETA/SETNBE Set byte if above/Set byte if not below or equal. SETAE/SETNB/SETNC Set byte if above or equal/Set byte if not below/Set byte if not carry.
-SETB/SETNAE/SETC SETBE/SETNA SETG/SETNLE SETGE/SETNL SETL/SETNGE SETLE/SETNG
-SETS
-SETNS
-SETO
-SETNO SETPE/SETP SETPO/SETNP TEST
-CRC321 POPCNT2
-Set byte if below/Set byte if not above or equal/Set byte if carry. Set byte if below or equal/Set byte if not above.
-Set byte if greater/Set byte if not less or equal.
-Set byte if greater or equal/Set byte if not less.
-Set byte if less/Set byte if not greater or equal. Set byte if less or equal/Set byte if not greater. Set byte if sign (negative).
-Set byte if not sign (non-negative).
-Set byte if overflow.
-Set byte if not overflow.
-Set byte if parity even/Set byte if parity.
-Set byte if parity odd/Set byte if not parity.
-Logical compare.
-Provides hardware acceleration to calculate cyclic redundancy checks for fast and efficient implementation of data integrity protocols.
-This instruction calculates of number of bits set to 1 in the second operand (source) and returns the count in the first operand (a destination register).
+## Decimal Arithmetic Instructions (5.1.3)
+
+The decimal arithmetic instructions perform decimal arithmetic on
+binary coded decimal (BCD) data. DAA Decimal adjust after addition.
+
+* *DAS*{:.smallcaps} - Decimal adjust after subtraction.
+* *AAA*{:.smallcaps} - ASCII adjust after addition.
+* *AAS*{:.smallcaps} - ASCII adjust after subtraction.
+* *AAM*{:.smallcaps} - ASCII adjust after multiplication.
+* *AAD*{:.smallcaps} - ASCII adjust before division.
+
+## Logical Instructions (5.1.4)
+
+The logical instructions perform basic AND, OR, XOR, and NOT logical
+operations on byte, word, and doubleword values.
+
+* *AND*{:.smallcaps} - Perform bitwise logical AND.
+* *OR*{:.smallcaps} - Perform bitwise logical OR.
+* *XOR*{:.smallcaps} - Perform bitwise logical exclusive OR.
+* *NOT*{:.smallcaps} - Perform bitwise logical NOT.
+
+## Shift and Rotate Instructions (5.1.5)
+
+The shift and rotate instructions shift and rotate the bits in word
+and doubleword operands.
+
+* *SAR*{:.smallcaps} - Shift arithmetic right.
+* *SHR*{:.smallcaps} - Shift logical right.
+* *SAL/SHL*{:.smallcaps} - Shift arithmetic left/Shift logical left.
+* *SHRD*{:.smallcaps} - Shift right double.
+* *SHLD*{:.smallcaps} - Shift left double.
+* *ROR*{:.smallcaps} - Rotate right.
+* *ROL*{:.smallcaps} - Rotate left.
+* *RCR*{:.smallcaps} - Rotate through carry right.
+* *RCL*{:.smallcaps} - Rotate through carry left.
+
+## Bit and Byte Instructions (5.1.6)
+
+Bit instructions test and modify individual bits in word and
+doubleword operands. Byte instructions set the value of a byte operand
+to indicate the status of flags in the EFLAGS register.
+
+* *BT*{:.smallcaps} - Bit test.
+* *BTS*{:.smallcaps} - Bit test and set.
+* *BTR*{:.smallcaps} - Bit test and reset.
+* *BTC*{:.smallcaps} - Bit test and complement.
+* *BSF*{:.smallcaps} - Bit scan forward.
+* *BSR*{:.smallcaps} - Bit scan reverse.
+* *SETE/SETZ*{:.smallcaps} - Set byte if equal/Set byte if zero.
+* *SETNE/SETNZ*{:.smallcaps} - Set byte if not equal/Set byte if not zero.
+* *SETA/SETNBE*{:.smallcaps} - Set byte if above/Set byte if not below or equal.
+* *SETAE/SETNB/SETNC*{:.smallcaps} - Set byte if above or equal/Set byte if not below/Set byte if not carry.
+* *SETB/SETNAE/SETC*{:.smallcaps} - Set byte if below/Set byte if not above or equal/Set byte if carry.
+* *SETBE/SETNA*{:.smallcaps} - Set byte if below or equal/Set byte if not above.
+* *SETG/SETNLE*{:.smallcaps} - Set byte if greater/Set byte if not less or equal.
+* *SETGE/SETNL*{:.smallcaps} - Set byte if greater or equal/Set byte if not less.
+* *SETL/SETNGE*{:.smallcaps} - Set byte if less/Set byte if not greater or equal.
+* *SETLE/SETNG*{:.smallcaps} - Set byte if less or equal/Set byte if not greater.
+* *SETS*{:.smallcaps} - Set byte if sign (negative).
+* *SETNS*{:.smallcaps} - Set byte if not sign (non-negative).
+* *SETO*{:.smallcaps} - Set byte if overflow.
+* *SETNO*{:.smallcaps} - Set byte if not overflow.
+* *SETPE/SETP*{:.smallcaps} - Set byte if parity even/Set byte if parity.
+* *SETPO/SETNP*{:.smallcaps} - Set byte if parity odd/Set byte if not parity.
+* *TEST*{:.smallcaps} - Logical compare.
+* *CRC32*{:.smallcaps} - Provides hardware acceleration to calculate cyclic redundancy checks for fast and efficient implementation of data integrity protocols. (Processor support of CRC32 is enumerated by CPUID.01:ECX[SSE4.2] = 1)
+* *POPCNT*{:.smallcaps} - This instruction calculates of number of bits set to 1 in the second operand (source) and returns the count in the first operand (a destination register). (Processor support of POPCNT is enumerated by CPUID.01:ECX[POPCNT] = 1)
+
 5.1.7 Control Transfer Instructions
 The control transfer instructions provide jump, conditional jump, loop, and call and return operations to control program flow.
 JMP Jump.
 JE/JZ Jump if equal/Jump if zero. JNE/JNZ Jump if not equal/Jump if not zero.
-1. Processor support of CRC32 is enumerated by CPUID.01:ECX[SSE4.2] = 1
-2. Processor support of POPCNT is enumerated by CPUID.01:ECX[POPCNT] = 1
-INSTRUCTION SET SUMMARY
- Vol. 1 5-5
  
 INSTRUCTION SET SUMMARY
 JA/JNBE Jump if above/Jump if not below or equal. JAE/JNB Jump if above or equal/Jump if not below. JB/JNAE Jump if below/Jump if not above or equal. JBE/JNA Jump if below or equal/Jump if not above. JG/JNLE Jump if greater/Jump if not less or equal. JGE/JNL Jump if greater or equal/Jump if not less. JL/JNGE Jump if less/Jump if not greater or equal. JLE/JNG Jump if less or equal/Jump if not greater. JC Jump if carry.
