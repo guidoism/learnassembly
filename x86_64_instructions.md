@@ -18,65 +18,65 @@ conversion.
   memory and general- purpose or segment registers; move immediates to
   general-purpose registers.
 
-* CMOVE/CMOVZ - Conditional move if equal/Conditional move if zero.
+* *CMOVE/CMOVZ*{:.smallcaps} - Conditional move if equal/Conditional move if zero.
 
-* CMOVNE/CMOVNZ - Conditional move if not equal/Conditional move if not zero.
+* *CMOVNE/CMOVNZ*{:.smallcaps} - Conditional move if not equal/Conditional move if not zero.
 
-* CMOVA/CMOVNBE - Conditional move if above/Conditional move if not below or equal.
+* *CMOVA/CMOVNBE*{:.smallcaps} - Conditional move if above/Conditional move if not below or equal.
 
-* CMOVAE/CMOVNB - Conditional move if above or equal/Conditional move if not below.
+* *CMOVAE/CMOVNB*{:.smallcaps} - Conditional move if above or equal/Conditional move if not below.
 
-* CMOVB/CMOVNAE - Conditional move if below/Conditional move if not above or equal.
+* *CMOVB/CMOVNAE*{:.smallcaps} - Conditional move if below/Conditional move if not above or equal.
 
-* CMOVBE/CMOVNA - Conditional move if below or equal/Conditional move if not above.
+* *CMOVBE/CMOVNA*{:.smallcaps} - Conditional move if below or equal/Conditional move if not above.
 
-* CMOVG/CMOVNLE - Conditional move if greater/Conditional move if not less or equal.
+* *CMOVG/CMOVNLE*{:.smallcaps} - Conditional move if greater/Conditional move if not less or equal.
 
-* CMOVGE/CMOVNL - Conditional move if greater or equal/Conditional move if not less.
+* *CMOVGE/CMOVNL*{:.smallcaps} - Conditional move if greater or equal/Conditional move if not less.
 
-* CMOVL/CMOVNGE - Conditional move if less/Conditional move if not greater or equal.
+* *CMOVL/CMOVNGE*{:.smallcaps} - Conditional move if less/Conditional move if not greater or equal.
 
-* CMOVLE/CMOVNG - Conditional move if less or equal/Conditional move if not greater.
+* *CMOVLE/CMOVNG*{:.smallcaps} - Conditional move if less or equal/Conditional move if not greater.
 
-* CMOVC - Conditional move if carry.
+* *CMOVC*{:.smallcaps} - Conditional move if carry.
 
-* CMOVNC - Conditional move if not carry.
+* *CMOVNC*{:.smallcaps} - Conditional move if not carry.
 
-* CMOVO - Conditional move if overflow.
+* *CMOVO*{:.smallcaps} - Conditional move if overflow.
 
-* CMOVNO - Conditional move if not overflow.
+* *CMOVNO*{:.smallcaps} - Conditional move if not overflow.
 
-* CMOVS - Conditional move if sign (negative).
+* *CMOVS*{:.smallcaps} - Conditional move if sign (negative).
 
-* CMOVNS - Conditional move if not sign (non-negative).
+* *CMOVNS*{:.smallcaps} - Conditional move if not sign (non-negative).
 
-* CMOVP/CMOVPE - Conditional move if parity/Conditional move if parity even.
+* *CMOVP/CMOVPE*{:.smallcaps} - Conditional move if parity/Conditional move if parity even.
 
-* CMOVNP/CMOVPO - Conditional move if not parity/Conditional move if parity odd.
+* *CMOVNP/CMOVPO*{:.smallcaps} - Conditional move if not parity/Conditional move if parity odd.
 
-* XCHG - Exchange.
+* *XCHG*{:.smallcaps} - Exchange.
 
-* BSWAP - Byte swap.
+* *BSWAP*{:.smallcaps} - Byte swap.
 
-* XADD - Exchange and add.
+* *XADD*{:.smallcaps} - Exchange and add.
 
-* CMPXCHG - Compare and exchange.
+* *CMPXCHG*{:.smallcaps} - Compare and exchange.
 
-* CMPXCHG8B - Compare and exchange 8 bytes.
+* *CMPXCHG8B*{:.smallcaps} - Compare and exchange 8 bytes.
 
-* PUSH - Push onto stack.
+* *PUSH*{:.smallcaps} - Push onto stack.
 
-* POP - Pop off of stack.
+* *POP*{:.smallcaps} - Pop off of stack.
 
-* PUSHA/PUSHAD - Push general-purpose registers onto stack.
+* *PUSHA/PUSHAD*{:.smallcaps} - Push general-purpose registers onto stack.
 
-* POPA/POPAD - Pop general-purpose registers from stack.
+* *POPA/POPAD*{:.smallcaps} - Pop general-purpose registers from stack.
 
-* CWD/CDQ - Convert word to doubleword/Convert doubleword to quadword.
+* *CWD/CDQ*{:.smallcaps} - Convert word to doubleword/Convert doubleword to quadword.
 
-* CBW/CWDE - Convert byte to word/Convert word to doubleword in EAX register.
+* *CBW/CWDE*{:.smallcaps} - Convert byte to word/Convert word to doubleword in EAX register.
 
-* MOVSX - Move and sign extend.
+* *MOVSX*{:.smallcaps} - Move and sign extend.
 
 
 
