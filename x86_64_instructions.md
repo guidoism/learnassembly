@@ -20,59 +20,32 @@ conversion.
 * *CMOVE/CMOVZ*{:.smallcaps} - Conditional move if equal/Conditional move if zero.
 * *CMOVNE/CMOVNZ*{:.smallcaps} - Conditional move if not equal/Conditional move if not zero.
 * *CMOVA/CMOVNBE*{:.smallcaps} - Conditional move if above/Conditional move if not below or equal.
-
 * *CMOVAE/CMOVNB*{:.smallcaps} - Conditional move if above or equal/Conditional move if not below.
-
 * *CMOVB/CMOVNAE*{:.smallcaps} - Conditional move if below/Conditional move if not above or equal.
-
 * *CMOVBE/CMOVNA*{:.smallcaps} - Conditional move if below or equal/Conditional move if not above.
-
 * *CMOVG/CMOVNLE*{:.smallcaps} - Conditional move if greater/Conditional move if not less or equal.
-
 * *CMOVGE/CMOVNL*{:.smallcaps} - Conditional move if greater or equal/Conditional move if not less.
-
 * *CMOVL/CMOVNGE*{:.smallcaps} - Conditional move if less/Conditional move if not greater or equal.
-
 * *CMOVLE/CMOVNG*{:.smallcaps} - Conditional move if less or equal/Conditional move if not greater.
-
 * *CMOVC*{:.smallcaps} - Conditional move if carry.
-
 * *CMOVNC*{:.smallcaps} - Conditional move if not carry.
-
 * *CMOVO*{:.smallcaps} - Conditional move if overflow.
-
 * *CMOVNO*{:.smallcaps} - Conditional move if not overflow.
-
 * *CMOVS*{:.smallcaps} - Conditional move if sign (negative).
-
 * *CMOVNS*{:.smallcaps} - Conditional move if not sign (non-negative).
-
 * *CMOVP/CMOVPE*{:.smallcaps} - Conditional move if parity/Conditional move if parity even.
-
 * *CMOVNP/CMOVPO*{:.smallcaps} - Conditional move if not parity/Conditional move if parity odd.
-
 * *XCHG*{:.smallcaps} - Exchange.
-
 * *BSWAP*{:.smallcaps} - Byte swap.
-
 * *XADD*{:.smallcaps} - Exchange and add.
-
 * *CMPXCHG*{:.smallcaps} - Compare and exchange.
-
 * *CMPXCHG8B*{:.smallcaps} - Compare and exchange 8 bytes.
-
 * *PUSH*{:.smallcaps} - Push onto stack.
-
 * *POP*{:.smallcaps} - Pop off of stack.
-
 * *PUSHA/PUSHAD*{:.smallcaps} - Push general-purpose registers onto stack.
-
 * *POPA/POPAD*{:.smallcaps} - Pop general-purpose registers from stack.
-
 * *CWD/CDQ*{:.smallcaps} - Convert word to doubleword/Convert doubleword to quadword.
-
 * *CBW/CWDE*{:.smallcaps} - Convert byte to word/Convert word to doubleword in EAX register.
-
 * *MOVSX*{:.smallcaps} - Move and sign extend.
 
 
