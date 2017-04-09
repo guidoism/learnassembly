@@ -136,94 +136,134 @@ to indicate the status of flags in the EFLAGS register.
 * *CRC32*{:.smallcaps} - Provides hardware acceleration to calculate cyclic redundancy checks for fast and efficient implementation of data integrity protocols. (Processor support of CRC32 is enumerated by CPUID.01:ECX[SSE4.2] = 1)
 * *POPCNT*{:.smallcaps} - This instruction calculates of number of bits set to 1 in the second operand (source) and returns the count in the first operand (a destination register). (Processor support of POPCNT is enumerated by CPUID.01:ECX[POPCNT] = 1)
 
-5.1.7 Control Transfer Instructions
-The control transfer instructions provide jump, conditional jump, loop, and call and return operations to control program flow.
+## Control Transfer Instructions
+
+The control transfer instructions provide jump, conditional jump,
+loop, and call and return operations to control program flow.
+
 JMP Jump.
-JE/JZ Jump if equal/Jump if zero. JNE/JNZ Jump if not equal/Jump if not zero.
- 
-INSTRUCTION SET SUMMARY
-JA/JNBE Jump if above/Jump if not below or equal. JAE/JNB Jump if above or equal/Jump if not below. JB/JNAE Jump if below/Jump if not above or equal. JBE/JNA Jump if below or equal/Jump if not above. JG/JNLE Jump if greater/Jump if not less or equal. JGE/JNL Jump if greater or equal/Jump if not less. JL/JNGE Jump if less/Jump if not greater or equal. JLE/JNG Jump if less or equal/Jump if not greater. JC Jump if carry.
+JE/JZ Jump if equal/Jump if zero.
+JNE/JNZ Jump if not equal/Jump if not zero.
+JA/JNBE Jump if above/Jump if not below or equal.
+JAE/JNB Jump if above or equal/Jump if not below.
+JB/JNAE Jump if below/Jump if not above or equal.
+JBE/JNA Jump if below or equal/Jump if not above.
+JG/JNLE Jump if greater/Jump if not less or equal.
+JGE/JNL Jump if greater or equal/Jump if not less.
+JL/JNGE Jump if less/Jump if not greater or equal.
+JLE/JNG Jump if less or equal/Jump if not greater.
+JC Jump if carry.
 JNC Jump if not carry.
 JO Jump if overflow.
 JNO Jump if not overflow.
 JS Jump if sign (negative).
 JNS Jump if not sign (non-negative).
 JPO/JNP Jump if parity odd/Jump if not parity.
-JPE/JP Jump if parity even/Jump if parity. JCXZ/JECXZ Jump register CX zero/Jump register ECX zero. LOOP Loop with ECX counter.
-LOOPZ/LOOPE Loop with ECX and zero/Loop with ECX and equal. LOOPNZ/LOOPNE Loop with ECX and not zero/Loop with ECX and not equal.
-CALL RET IRET INT INTO BOUND ENTER LEAVE
-Call procedure.
-Return.
-Return from interrupt. Software interrupt. Interrupt on overflow. Detect value out of range. High-level procedure entry. High-level procedure exit.
-5.1.8 String Instructions
-The string instructions operate on strings of bytes, allowing them to be moved to and from memory.
-MOVS/MOVSB MOVS/MOVSW MOVS/MOVSD CMPS/CMPSB CMPS/CMPSW CMPS/CMPSD SCAS/SCASB SCAS/SCASW SCAS/SCASD LODS/LODSB LODS/LODSW LODS/LODSD STOS/STOSB STOS/STOSW
-Move string/Move byte string.
-Move string/Move word string.
-Move string/Move doubleword string. Compare string/Compare byte string. Compare string/Compare word string. Compare string/Compare doubleword string. Scan string/Scan byte string.
-Scan string/Scan word string.
-Scan string/Scan doubleword string.
-Load string/Load byte string.
-Load string/Load word string.
-Load string/Load doubleword string.
-Store string/Store byte string.
-Store string/Store word string.
-5-6 Vol. 1
- 
-STOS/STOSD REP REPE/REPZ REPNE/REPNZ
-Store string/Store doubleword string.
-Repeat while ECX not zero.
-Repeat while equal/Repeat while zero.
-Repeat while not equal/Repeat while not zero.
-5.1.9 I/O Instructions
-These instructions move data between the processor’s I/O ports and a register or memory.
-IN
-OUT INS/INSB INS/INSW INS/INSD OUTS/OUTSB OUTS/OUTSW OUTS/OUTSD
-Read from a port.
-Write to a port.
-Input string from port/Input byte string from port.
-Input string from port/Input word string from port.
-Input string from port/Input doubleword string from port. Output string to port/Output byte string to port.
-Output string to port/Output word string to port.
-Output string to port/Output doubleword string to port.
-5.1.10 Enter and Leave Instructions
-These instructions provide machine-language support for procedure calls in block-structured languages.
-ENTER LEAVE
-5.1.11
-High-level procedure entry. High-level procedure exit.
-Flag Control (EFLAG) Instructions
-The flag control instructions operate on the flags in the EFLAGS register. STC Set carry flag.
+JPE/JP Jump if parity even/Jump if parity.
+JCXZ/JECXZ Jump register CX zero/Jump register ECX zero.
+LOOP Loop with ECX counter.
+LOOPZ/LOOPE Loop with ECX and zero/Loop with ECX and equal.
+LOOPNZ/LOOPNE Loop with ECX and not zero/Loop with ECX and not equal.
+CALL Call procedure.
+RET Return.
+IRET Return from interrupt.
+INT Software interrupt.
+INTO Interrupt on overflow.
+BOUND Detect value out of range.
+ENTER High-level procedure entry.
+LEAVE High-level procedure exit.
+
+## String Instructions
+
+The string instructions operate on strings of bytes, allowing them to
+be moved to and from memory.
+
+MOVS/MOVSB Move string/Move byte string.
+MOVS/MOVSW Move string/Move word string.
+MOVS/MOVSD Move string/Move doubleword string.
+CMPS/CMPSB Compare string/Compare byte string.
+CMPS/CMPSW Compare string/Compare word string.
+CMPS/CMPSD Compare string/Compare doubleword string.
+SCAS/SCASB Scan string/Scan byte string.
+SCAS/SCASW Scan string/Scan word string.
+SCAS/SCASD Scan string/Scan doubleword string.
+LODS/LODSB Load string/Load byte string.
+LODS/LODSW Load string/Load word string.
+LODS/LODSD Load string/Load doubleword string.
+STOS/STOSB Store string/Store byte string.
+STOS/STOSW Store string/Store word string.
+STOS/STOSD Store string/Store doubleword string.
+REP Repeat while ECX not zero.
+REPE/REPZ Repeat while equal/Repeat while zero.
+REPNE/REPNZ Repeat while not equal/Repeat while not zero.
+
+## I/O Instructions
+
+These instructions move data between the processor’s I/O ports and a
+register or memory.
+
+IN Read from a port.
+OUT Write to a port.
+INS/INSB Input string from port/Input byte string from port.
+INS/INSW Input string from port/Input word string from port.
+INS/INSD Input string from port/Input doubleword string from port. 
+OUTS/OUTSB Output string to port/Output byte string to port.
+OUTS/OUTSW Output string to port/Output word string to port.
+OUTS/OUTSD Output string to port/Output doubleword string to port.
+
+## Enter and Leave Instructions
+
+These instructions provide machine-language support for procedure
+calls in block-structured languages.
+
+ENTER High-level procedure entry. 
+LEAVE High-level procedure exit.
+
+## Flag Control (EFLAG) Instructions
+
+The flag control instructions operate on the flags in the EFLAGS
+register. STC Set carry flag.
+
 CLC Clear the carry flag.
 CMC Complement the carry flag.
-CLD Clear the direction flag. STD Set direction flag.
-LAHF Load flags into AH register. SAHF Store AH register into flags. PUSHF/PUSHFD Push EFLAGS onto stack. POPF/POPFD Pop EFLAGS from stack.
-STI CLI
-Set interrupt flag. Clear the interrupt flag.
-5.1.12 Segment Register Instructions
-The segment register instructions allow far pointers (segment addresses) to be loaded into the segment registers. LDS Load far pointer using DS.
+CLD Clear the direction flag.
+STD Set direction flag.
+LAHF Load flags into AH register.
+SAHF Store AH register into flags.
+PUSHF/PUSHFD Push EFLAGS onto stack.
+POPF/POPFD Pop EFLAGS from stack.
+STI Set interrupt flag. 
+CLI Clear the interrupt flag.
+
+## Segment Register Instructions
+
+The segment register instructions allow far pointers (segment
+addresses) to be loaded into the segment registers.
+
+LDS Load far pointer using DS.
 LES Load far pointer using ES.
 LFS Load far pointer using FS.
 LGS Load far pointer using GS. LSS Load far pointer using SS.
-INSTRUCTION SET SUMMARY
-Vol. 1 5-7
- 
-INSTRUCTION SET SUMMARY
-5.1.13 Miscellaneous Instructions
-The miscellaneous instructions provide such functions as loading an effective address, executing a “no-operation,” and retrieving processor identification information.
-LEA
-NOP
-UD2 XLAT/XLATB CPUID MOVBE1 PREFETCHW PREFETCHWT1 CLFLUSH
-CLFLUSHOPT
-Load effective address.
-No operation.
-Undefined instruction.
-Table lookup translation.
-Processor identification.
-Move data after swapping data bytes.
-Prefetch data into cache in anticipation of write. Prefetch hint T1 with intent to write.
-Flushes and invalidates a memory operand and its associated cache line from all levels of the processor’s cache hierarchy.
-Flushes and invalidates a memory operand and its associated cache line from all levels of the processor’s cache hierarchy with optimized memory system throughput.
-5.1.14 User Mode Extended Sate Save/Restore Instructions
+
+## Miscellaneous Instructions
+
+The miscellaneous instructions provide such functions as loading an
+effective address, executing a “no-operation,” and retrieving
+processor identification information.
+
+LEA Load effective address.
+NOP No operation.
+UD2 Undefined instruction.
+XLAT/XLATB Table lookup translation.
+CPUID Processor identification.
+MOVBE1 Move data after swapping data bytes.
+PREFETCHW Prefetch data into cache in anticipation of write. 
+PREFETCHWT1 Prefetch hint T1 with intent to write.
+CLFLUSH Flushes and invalidates a memory operand and its associated cache line from all levels of the processor’s cache hierarchy.
+CLFLUSHOPT Flushes and invalidates a memory operand and its associated cache line from all levels of the processor’s cache hierarchy with optimized memory system throughput.
+
+## User Mode Extended Sate Save/Restore Instructions
+
 XSAVE Save processor extended states to memory.
 XSAVEC Save processor extended states with compaction to memory. XSAVEOPT Save processor extended states to memory, optimized. XRSTOR Restore processor extended states from memory.
 XGETBV Reads the state of an extended control register.
