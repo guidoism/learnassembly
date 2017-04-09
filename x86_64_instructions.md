@@ -430,61 +430,68 @@ FSTSW Store FPU status word after checking error conditions.
 FNSTSW Store FPU status word without checking error conditions.
 WAIT/FWAIT Wait for FPU.
 FNOP FPU no operation.
-
-
-
-
-
-
-
-
-
-
-INSTRUCTION SET SUMMARY
-Vol. 1 5-11
  
-INSTRUCTION SET SUMMARY
-5.3 X87 FPU AND SIMD STATE MANAGEMENT INSTRUCTIONS
-Two state management instructions were introduced into the IA-32 architecture with the Pentium II processor family:
-FXSAVE Save x87 FPU and SIMD state. FXRSTOR Restore x87 FPU and SIMD state.
-Initially, these instructions operated only on the x87 FPU (and MMX) registers to perform a fast save and restore, respectively, of the x87 FPU and MMX state. With the introduction of SSE extensions in the Pentium III processor family, these instructions were expanded to also save and restore the state of the XMM and MXCSR registers. Intel 64 architecture also supports these instructions.
-See Section 10.5, “FXSAVE and FXRSTOR Instructions,” for more detail.
-5.4 MMXTM INSTRUCTIONS
-Four extensions have been introduced into the IA-32 architecture to permit IA-32 processors to perform single- instruction multiple-data (SIMD) operations. These extensions include the MMX technology, SSE extensions, SSE2 extensions, and SSE3 extensions. For a discussion that puts SIMD instructions in their historical context, see Section 2.2.7, “SIMD Instructions.”
-MMX instructions operate on packed byte, word, doubleword, or quadword integer operands contained in memory, in MMX registers, and/or in general-purpose registers. For more detail on these instructions, see Chapter 9, “Programming with Intel® MMXTM Technology.”
-MMX instructions can only be executed on Intel 64 and IA-32 processors that support the MMX technology. Support for these instructions can be detected with the CPUID instruction. See the description of the CPUID instruction in Chapter 3, “Instruction Set Reference, A-L,” of the Intel® 64 and IA-32 Architectures Software Developer’s Manual, Volume 2A.
-MMX instructions are divided into the following subgroups: data transfer, conversion, packed arithmetic, compar- ison, logical, shift and rotate, and state management instructions. The sections that follow introduce each subgroup.
-5.4.1 MMX Data Transfer Instructions
-The data transfer instructions move doubleword and quadword operands between MMX registers and between MMX registers and memory.
-MOVD MOVQ
-5.4.2
-Move doubleword. Move quadword.
-MMX Conversion Instructions
-The conversion instructions pack and unpack bytes, words, and doublewords
-PACKSSWB PACKSSDW PACKUSWB PUNPCKHBW PUNPCKHWD PUNPCKHDQ PUNPCKLBW PUNPCKLWD PUNPCKLDQ
-Pack words into bytes with signed saturation.
-Pack doublewords into words with signed saturation. Pack words into bytes with unsigned saturation. Unpack high-order bytes.
-Unpack high-order words.
-Unpack high-order doublewords.
-Unpack low-order bytes.
-Unpack low-order words.
-Unpack low-order doublewords.
-5-12 Vol. 1
+
+## X87 FPU and SIMD State Management Instructions
+
+Two state management instructions were introduced into the IA-32
+architecture with the Pentium II processor family. Initially, these
+instructions operated only on the x87 FPU (and MMX) registers to
+perform a fast save and restore, respectively, of the x87 FPU and MMX
+state. With the introduction of SSE extensions in the Pentium III
+processor family, these instructions were expanded to also save and
+restore the state of the XMM and MXCSR registers. Intel 64
+architecture also supports these instructions.
+
+FXSAVE Save x87 FPU and SIMD state.
+FXRSTOR Restore x87 FPU and SIMD state.
+
+## MMX Data Transfer Instructions
+
+The data transfer instructions move doubleword and quadword operands
+between MMX registers and between MMX registers and memory.
+
+MOVD Move doubleword. 
+MOVQ Move quadword.
+
+## MMX Conversion Instructions
+
+The conversion instructions pack and unpack bytes, words, and
+doublewords
+
+PACKSSWB Pack words into bytes with signed saturation.
+PACKSSDW Pack doublewords into words with signed saturation.
+PACKUSWB Pack words into bytes with unsigned saturation.
+PUNPCKHBW Unpack high-order bytes.
+PUNPCKHWD Unpack high-order words.
+PUNPCKHDQ Unpack high-order doublewords.
+PUNPCKLBW Unpack low-order bytes.
+PUNPCKLWD Unpack low-order words.
+PUNPCKLDQ Unpack low-order doublewords.
  
-5.4.3 MMX Packed Arithmetic Instructions
-The packed arithmetic instructions perform packed integer arithmetic on packed byte, word, and doubleword inte- gers.
-PADDB PADDW PADDD PADDSB PADDSW PADDUSB PADDUSW PSUBB PSUBW PSUBD PSUBSB PSUBSW PSUBUSB PSUBUSW PMULHW PMULLW PMADDWD
-5.4.4
-Add packed byte integers.
-Add packed word integers.
-Add packed doubleword integers.
-Add packed signed byte integers with signed saturation.
-Add packed signed word integers with signed saturation.
-Add packed unsigned byte integers with unsigned saturation.
-Add packed unsigned word integers with unsigned saturation. Subtract packed byte integers.
-Subtract packed word integers.
-Subtract packed doubleword integers.
-Subtract packed signed byte integers with signed saturation. Subtract packed signed word integers with signed saturation. Subtract packed unsigned byte integers with unsigned saturation. Subtract packed unsigned word integers with unsigned saturation. Multiply packed signed word integers and store high result. Multiply packed signed word integers and store low result. Multiply and add packed word integers.
+## MMX Packed Arithmetic Instructions
+
+The packed arithmetic instructions perform packed integer arithmetic
+on packed byte, word, and doubleword integers.
+
+PADDB Add packed byte integers.
+PADDW Add packed word integers.
+PADDD Add packed doubleword integers.
+PADDSB Add packed signed byte integers with signed saturation.
+PADDSW Add packed signed word integers with signed saturation.
+PADDUSB Add packed unsigned byte integers with unsigned saturation.
+PADDUSW Add packed unsigned word integers with unsigned saturation.
+PSUBB Subtract packed byte integers.
+PSUBW Subtract packed word integers.
+PSUBD Subtract packed doubleword integers.
+PSUBSB Subtract packed signed byte integers with signed saturation.
+PSUBSW Subtract packed signed word integers with signed saturation.
+PSUBUSB Subtract packed unsigned byte integers with unsigned saturation.
+PSUBUSW Subtract packed unsigned word integers with unsigned saturation.
+PMULHW Multiply packed signed word integers and store high result.
+PMULLW Multiply packed signed word integers and store low result.
+PMADDWD Multiply and add packed word integers.
+
 MMX Comparison Instructions
 The compare instructions compare packed bytes, words, or doublewords.
 PCMPEQB PCMPEQW PCMPEQD PCMPGTB PCMPGTW PCMPGTD
