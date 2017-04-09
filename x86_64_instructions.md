@@ -141,6 +141,7 @@ to indicate the status of flags in the EFLAGS register.
 The control transfer instructions provide jump, conditional jump,
 loop, and call and return operations to control program flow.
 
+|:------|:-----|
 | JMP | Jump. |
 | JE/JZ | Jump if equal/Jump if zero. |
 | JNE/JNZ | Jump if not equal/Jump if not zero. |
