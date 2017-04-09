@@ -256,7 +256,7 @@ NOP No operation.
 UD2 Undefined instruction.
 XLAT/XLATB Table lookup translation.
 CPUID Processor identification.
-MOVBE1 Move data after swapping data bytes.
+MOVBE1 Move data after swapping data bytes. (Processor support of MOVBE is enumerated by CPUID.01:ECX.MOVBE[bit 22] = 1)
 PREFETCHW Prefetch data into cache in anticipation of write. 
 PREFETCHWT1 Prefetch hint T1 with intent to write.
 CLFLUSH Flushes and invalidates a memory operand and its associated cache line from all levels of the processor’s cache hierarchy.
@@ -265,134 +265,181 @@ CLFLUSHOPT Flushes and invalidates a memory operand and its associated cache lin
 ## User Mode Extended Sate Save/Restore Instructions
 
 XSAVE Save processor extended states to memory.
-XSAVEC Save processor extended states with compaction to memory. XSAVEOPT Save processor extended states to memory, optimized. XRSTOR Restore processor extended states from memory.
+XSAVEC Save processor extended states with compaction to memory.
+XSAVEOPT Save processor extended states to memory, optimized.
+XRSTOR Restore processor extended states from memory.
 XGETBV Reads the state of an extended control register.
-5.1.15 Random Number Generator Instructions
-RDRAND Retrieves a random number generated from hardware. RDSEED Retrieves a random number generated from hardware.
-5.1.16 BMI1, BMI2
-ANDN Bitwise AND of first source with inverted 2nd source operands. BEXTR Contiguous bitwise extract.
+
+## Random Number Generator Instructions
+
+RDRAND Retrieves a random number generated from hardware.
+RDSEED Retrieves a random number generated from hardware.
+
+## BMI1, BMI2
+
+ANDN Bitwise AND of first source with inverted 2nd source operands.
+BEXTR Contiguous bitwise extract.
 BLSI Extract lowest set bit.
 BLSMSK Set all lower bits below first set bit to 1.
 BLSR Reset lowest set bit.
-BZHI Zero high bits starting from specified bit position. LZCNT Count the number leading zero bits.
-MULX Unsigned multiply without affecting arithmetic flags. PDEP Parallel deposit of bits using a mask.
+BZHI Zero high bits starting from specified bit position.
+LZCNT Count the number leading zero bits.
+MULX Unsigned multiply without affecting arithmetic flags.
+PDEP Parallel deposit of bits using a mask.
 PEXT Parallel extraction of bits using a mask.
-RORX Rotate right without affecting arithmetic flags. SARX Shift arithmetic right.
+RORX Rotate right without affecting arithmetic flags.
+SARX Shift arithmetic right.
 SHLX Shift logic left.
 SHRX Shift logic right.
 TZCNT Count the number trailing zero bits.
-1. Processor support of MOVBE is enumerated by CPUID.01:ECX.MOVBE[bit 22] = 1.
- 5-8 Vol. 1
  
-5.1.16.1 Detection of VEX-encoded GPR Instructions, LZCNT and TZCNT, PREFETCHW
+## Detection of VEX-encoded GPR Instructions, LZCNT and TZCNT, PREFETCHW
+
 VEX-encoded general-purpose instructions do not operate on any vector registers.
 There are separate feature flags for the following subsets of instructions that operate on general purpose registers, and the detection requirements for hardware support are:
 CPUID.(EAX=07H, ECX=0H):EBX.BMI1[bit 3]: if 1 indicates the processor supports the first group of advanced bit manipulation extensions (ANDN, BEXTR, BLSI, BLSMSK, BLSR, TZCNT);
 CPUID.(EAX=07H, ECX=0H):EBX.BMI2[bit 8]: if 1 indicates the processor supports the second group of advanced bit manipulation extensions (BZHI, MULX, PDEP, PEXT, RORX, SARX, SHLX, SHRX);
 CPUID.EAX=80000001H:ECX.LZCNT[bit 5]: if 1 indicates the processor supports the LZCNT instruction.
 CPUID.EAX=80000001H:ECX.PREFTEHCHW[bit 8]: if 1 indicates the processor supports the PREFTEHCHW instruc- tion. CPUID.(EAX=07H, ECX=0H):ECX.PREFTEHCHWT1[bit 0]: if 1 indicates the processor supports the PREFTEHCHWT1 instruction.
-5.2 X87 FPU INSTRUCTIONS
-The x87 FPU instructions are executed by the processor’s x87 FPU. These instructions operate on floating-point, integer, and binary-coded decimal (BCD) operands. For more detail on x87 FPU instructions, see Chapter 8, “Programming with the x87 FPU.”
-These instructions are divided into the following subgroups: data transfer, load constants, and FPU control instruc- tions. The sections that follow introduce each subgroup.
-5.2.1 x87 FPU Data Transfer Instructions
-The data transfer instructions move floating-point, integer, and BCD values between memory and the x87 FPU registers. They also perform conditional move operations on floating-point operands.
-FLD
-FST
-FSTP
-FILD
-FIST FISTP1 FBLD FBSTP FXCH FCMOVE FCMOVNE FCMOVB FCMOVBE FCMOVNB FCMOVNBE FCMOVU FCMOVNU
-5.2.2
-Load floating-point value.
-Store floating-point value.
-Store floating-point value and pop. Load integer.
-Store integer.
-Store integer and pop.
-Load BCD.
-Store BCD and pop.
-Exchange registers.
-Floating-point conditional move if Floating-point conditional move if Floating-point conditional move if Floating-point conditional move if Floating-point conditional move if Floating-point conditional move if Floating-point conditional move if Floating-point conditional move if
-x87 FPU Basic Arithmetic Instructions
-The basic arithmetic instructions perform basic arithmetic operations on floating-point and integer operands.
-1. SSE3 provides an instruction FISTTP for integer conversion.
-equal.
-not equal.
-below.
-below or equal. not below.
-not below or equal. unordered.
-not unordered.
-INSTRUCTION SET SUMMARY
- Vol. 1 5-9
+
+## x87 FPU Data Transfer Instructions
+
+The data transfer instructions move floating-point, integer, and BCD
+values between memory and the x87 FPU registers. They also perform
+conditional move operations on floating-point operands.
+
+FLD Load floating-point value.
+FST Store floating-point value.
+FSTP Store floating-point value and pop. 
+FILD Load integer.
+FIST Store integer.
+FISTP Store integer and pop. (SSE3 provides an instruction FISTTP for integer conversion.)
+FBLD Load BCD.
+FBSTP Store BCD and pop.
+FXCH Exchange registers.
+FCMOVE Floating-point conditional move if equal.
+FCMOVNE Floating-point conditional move if not equal.
+FCMOVB Floating-point conditional move if below.
+FCMOVBE Floating-point conditional move if below or equal.
+FCMOVNB Floating-point conditional move if not below.
+FCMOVNBE Floating-point conditional move if not below or equal.
+FCMOVU Floating-point conditional move if unordered.
+FCMOVNU Floating-point conditional move if not unordered.
+
+## x87 FPU Basic Arithmetic Instructions
+
+The basic arithmetic instructions perform basic arithmetic operations
+on floating-point and integer operands.
+
+FADD Add floating-point
+FADDP Add floating-point and pop
+FIADD Add integer
+FSUB Subtract floating-point
+FSUBP Subtract floating-point and pop
+FISUB Subtract integer
+FSUBR Subtract floating-point reverse
+FSUBRP Subtract floating-point reverse and pop
+FISUBR Subtract integer reverse
+FMUL Multiply floating-point
+FMULP Multiply floating-point and pop
+FIMUL Multiply integer
+FDIV Divide floating-point
+FDIVP Divide floating-point and pop
+FIDIV Divide integer
+FDIVR Divide floating-point reverse
+FDIVRP Divide floating-point reverse and pop
+FIDIVR Divide integer reverse
+FPREM Partial remainder
+FPREM1 IEEE Partial remainder
+FABS Absolute value
+FCHS Change sign
+FRNDINT Round to integer
+FSCALE Scale by power of two
+FSQRT Square root
+FXTRACT Extract exponent and significand
+
+## x87 FPU Comparison Instructions
+
+The compare instructions examine or compare floating-point or integer
+operands.
+
+FCOM Compare floating-point.
+FCOMP Compare floating-point and pop.
+FCOMPP Compare floating-point and pop twice.
+FUCOM Unordered compare floating-point.
+FUCOMP Unordered compare floating-point and pop.
+FUCOMPP Unordered compare floating-point and pop twice.
+FICOM Compare integer.
+FICOMP Compare integer and pop.
+FCOMI Compare floating-point and set EFLAGS.
+FUCOMI Unordered compare floating-point and set EFLAGS.
+FCOMIP Compare floating-point, set EFLAGS, and pop.
+FUCOMIP Unordered compare floating-point, set EFLAGS, and pop.
+FTST Test floating-point (compare with 0.0).
+FXAM Examine floating-point.
  
-INSTRUCTION SET SUMMARY
-FADD FADDP FIADD FSUB FSUBP FISUB FSUBR FSUBRP FISUBR FMUL FMULP FIMUL FDIV FDIVP FIDIV FDIVR FDIVRP FIDIVR FPREM FPREM1 FABS FCHS FRNDINT FSCALE FSQRT FXTRACT
-5.2.3
-Add floating-point
-Add floating-point and pop
-Add integer
-Subtract floating-point
-Subtract floating-point and pop Subtract integer
-Subtract floating-point reverse Subtract floating-point reverse and pop Subtract integer reverse
-Multiply floating-point
-Multiply floating-point and pop
-Multiply integer
-Divide floating-point
-Divide floating-point and pop
-Divide integer
-Divide floating-point reverse
-Divide floating-point reverse and pop Divide integer reverse
-Partial remainder
-IEEE Partial remainder
-Absolute value
-Change sign
-Round to integer
-Scale by power of two
-Square root
-Extract exponent and significand
-x87 FPU Comparison Instructions
-The compare instructions examine or compare floating-point or integer operands.
-FCOM FCOMP FCOMPP FUCOM FUCOMP FUCOMPP FICOM FICOMP FCOMI FUCOMI FCOMIP FUCOMIP FTST FXAM
-Compare floating-point.
-Compare floating-point and pop.
-Compare floating-point and pop twice.
-Unordered compare floating-point.
-Unordered compare floating-point and pop.
-Unordered compare floating-point and pop twice. Compare integer.
-Compare integer and pop.
-Compare floating-point and set EFLAGS.
-Unordered compare floating-point and set EFLAGS. Compare floating-point, set EFLAGS, and pop. Unordered compare floating-point, set EFLAGS, and pop. Test floating-point (compare with 0.0).
-Examine floating-point.
-5-10 Vol. 1
- 
-5.2.4 x87 FPU Transcendental Instructions
-The transcendental instructions perform basic trigonometric and logarithmic operations on floating-point oper- ands.
-FSIN FCOS FSINCOS FPTAN FPATAN F2XM1 FYL2X FYL2XP1
-5.2.5
-Sine
-Cosine
-Sine and cosine Partial tangent Partial arctangent 2x−1
-y∗log2x y∗log2(x+1)
-x87 FPU Load Constants Instructions
-The load constants instructions load common constants, such as π, into the x87 floating-point registers.
-FLD1 FLDZ FLDPI FLDL2E FLDLN2 FLDL2T FLDLG2
-5.2.6
-Load +1.0 Load +0.0 Load π
-Load log2e Load loge2 Load log210 Load log102
-x87 FPU Control Instructions
-The x87 FPU control instructions operate on the x87 FPU register stack and save and restore the x87 FPU state.
-FINCSTP FDECSTP FFREE
-FINIT FNINIT FCLEX FNCLEX FSTCW FNSTCW FLDCW FSTENV FNSTENV FLDENV FSAVE FNSAVE FRSTOR FSTSW FNSTSW WAIT/FWAIT FNOP
-Increment FPU register stack pointer.
-Decrement FPU register stack pointer.
-Free floating-point register.
-Initialize FPU after checking error conditions.
-Initialize FPU without checking error conditions.
-Clear floating-point exception flags after checking for error conditions. Clear floating-point exception flags without checking for error conditions. Store FPU control word after checking error conditions.
-Store FPU control word without checking error conditions. Load FPU control word.
-Store FPU environment after checking error conditions. Store FPU environment without checking error conditions. Load FPU environment.
-Save FPU state after checking error conditions.
-Save FPU state without checking error conditions. Restore FPU state.
-Store FPU status word after checking error conditions. Store FPU status word without checking error conditions. Wait for FPU.
-FPU no operation.
+## x87 FPU Transcendental Instructions
+
+The transcendental instructions perform basic trigonometric and
+logarithmic operations on floating-point oper- ands.
+
+FSIN Sine
+FCOS Cosine
+FSINCOS Sine and cosine
+FPTAN Partial tangent
+FPATAN Partial arctangent
+F2XM1 2^x−1
+FYL2X y∗log2x
+FYL2XP1 y∗log2(x+1)
+
+## x87 FPU Load Constants Instructions
+
+The load constants instructions load common constants, such as π, into
+the x87 floating-point registers.
+
+FLD1 Load +1.0
+FLDZ Load +0.0
+FLDPI Load π
+FLDL2E Load log2e
+FLDLN2 Load loge2
+FLDL2T Load log210
+FLDLG2 Load log102
+
+## x87 FPU Control Instructions
+
+The x87 FPU control instructions operate on the x87 FPU register stack
+and save and restore the x87 FPU state.
+
+FINCSTP Increment FPU register stack pointer.
+FDECSTP Decrement FPU register stack pointer.
+FFREE Free floating-point register.
+FINIT Initialize FPU after checking error conditions.
+FNINIT Initialize FPU without checking error conditions.
+FCLEX Clear floating-point exception flags after checking for error conditions.
+FNCLEX Clear floating-point exception flags without checking for error conditions.
+FSTCW Store FPU control word after checking error conditions.
+FNSTCW Store FPU control word without checking error conditions.
+FLDCW Load FPU control word.
+FSTENV Store FPU environment after checking error conditions.
+FNSTENV Store FPU environment without checking error conditions.
+FLDENV Load FPU environment.
+FSAVE Save FPU state after checking error conditions.
+FNSAVE Save FPU state without checking error conditions.
+FRSTOR Restore FPU state.
+FSTSW Store FPU status word after checking error conditions.
+FNSTSW Store FPU status word without checking error conditions.
+WAIT/FWAIT Wait for FPU.
+FNOP FPU no operation.
+
+
+
+
+
+
+
+
+
+
 INSTRUCTION SET SUMMARY
 Vol. 1 5-11
  
