@@ -705,52 +705,58 @@ SHUFPD Shuffles values in packed double-precision floating-point operands.
 UNPCKHPD Unpacks and interleaves the high values from two packed double-precision floating-point operands.
 UNPCKLPD Unpacks and interleaves the low values from two packed double-precision floating-point operands.
 
-5.6.1.6 SSE2 Conversion Instructions
-SSE2 conversion instructions convert packed and individual doubleword integers into packed and scalar double- precision floating-point values and vice versa. They also convert between packed and scalar single-precision and double-precision floating-point values.
-CVTPD2PI CVTTPD2PI
-CVTPI2PD CVTPD2DQ CVTTPD2DQ
-CVTDQ2PD CVTPS2PD
-CVTPD2PS
-CVTSS2SD
-CVTSD2SS
-CVTSD2SI CVTTSD2SI
-CVTSI2SD
-5.6.2
-CVTDQ2PS CVTPS2DQ CVTTPS2DQ
-Convert packed doubleword integers to packed single-precision floating-point values. Convert packed single-precision floating-point values to packed doubleword integers.
-Convert with truncation packed single-precision floating-point values to packed double- word integers.
-Convert packed double-precision floating-point values to packed doubleword integers.
-Convert with truncation packed double-precision floating-point values to packed double- word integers.
-Convert packed doubleword integers to packed double-precision floating-point values. Convert packed double-precision floating-point values to packed doubleword integers.
-Convert with truncation packed double-precision floating-point values to packed double- word integers.
-Convert packed doubleword integers to packed double-precision floating-point values.
-Convert packed single-precision floating-point values to packed double-precision floating- point values.
-Convert packed double-precision floating-point values to packed single-precision floating- point values.
-Convert scalar single-precision floating-point values to scalar double-precision floating- point values.
-Convert scalar double-precision floating-point values to scalar single-precision floating- point values.
-Convert scalar double-precision floating-point values to a doubleword integer.
-Convert with truncation scalar double-precision floating-point values to scalar doubleword integers.
-Convert doubleword integer to scalar double-precision floating-point value.
-SSE2 Packed Single-Precision Floating-Point Instructions
-SSE2 packed single-precision floating-point instructions perform conversion operations on single-precision floating-point and integer operands. These instructions represent enhancements to the SSE single-precision floating-point instructions.
-5.6.3 SSE2 128-Bit SIMD Integer Instructions
-SSE2 SIMD integer instructions perform additional operations on packed words, doublewords, and quadwords contained in XMM and MMX registers.
-MOVDQA MOVDQU MOVQ2DQ MOVDQ2Q PMULUDQ PADDQ PSUBQ PSHUFLW PSHUFHW PSHUFD
-Move aligned double quadword.
-Move unaligned double quadword.
-Move quadword integer from MMX to XMM registers. Move quadword integer from XMM to MMX registers. Multiply packed unsigned doubleword integers.
-Add packed quadword integers.
-Subtract packed quadword integers.
-Shuffle packed low words.
-Shuffle packed high words.
-Shuffle packed doublewords.
-INSTRUCTION SET SUMMARY
-Vol. 1 5-19
- 
-INSTRUCTION SET SUMMARY
-PSLLDQ PSRLDQ PUNPCKHQDQ PUNPCKLQDQ
-Shift double quadword left logical. Shift double quadword right logical. Unpack high quadwords.
-Unpack low quadwords.
+## SSE2 Conversion Instructions
+
+SSE2 conversion instructions convert packed and individual doubleword
+integers into packed and scalar double- precision floating-point
+values and vice versa. They also convert between packed and scalar
+single-precision and double-precision floating-point values.
+
+CVTPD2PI Convert packed doubleword integers to packed single-precision floating-point values.
+CVTTPD2PI Convert packed single-precision floating-point values to packed doubleword integers.
+CVTPI2PD Convert with truncation packed single-precision floating-point values to packed double-word integers.
+CVTPD2DQ Convert packed double-precision floating-point values to packed doubleword integers.
+CVTTPD2DQ Convert with truncation packed double-precision floating-point values to packed double-word integers.
+CVTDQ2PD Convert packed doubleword integers to packed double-precision floating-point values.
+CVTPS2PD Convert packed double-precision floating-point values to packed doubleword integers.
+CVTPD2PS Convert with truncation packed double-precision floating-point values to packed double-word integers.
+CVTSS2SD Convert packed doubleword integers to packed double-precision floating-point values.
+CVTSD2SS Convert packed single-precision floating-point values to packed double-precision floating-point values.
+CVTSD2SI Convert packed double-precision floating-point values to packed single-precision floating-point values.
+CVTTSD2SI Convert scalar single-precision floating-point values to scalar double-precision floating-point values.
+CVTSI2SD Convert scalar double-precision floating-point values to scalar single-precision floating-point values.
+
+## SSE2 Packed Single-Precision Floating-Point Instructions
+
+SSE2 packed single-precision floating-point instructions perform
+conversion operations on single-precision floating-point and integer
+operands. These instructions represent enhancements to the SSE
+single-precision floating-point instructions.
+
+CVTDQ2PS Convert scalar double-precision floating-point values to a doubleword integer.
+CVTPS2DQ Convert with truncation scalar double-precision floating-point values to scalar doubleword integers.
+CVTTPS2DQ Convert doubleword integer to scalar double-precision floating-point value.
+
+## SSE2 128-Bit SIMD Integer Instructions
+
+SSE2 SIMD integer instructions perform additional operations on packed
+words, doublewords, and quadwords contained in XMM and MMX registers.
+
+MOVDQA Move aligned double quadword.
+MOVDQU Move unaligned double quadword.
+MOVQ2DQ Move quadword integer from MMX to XMM registers.
+MOVDQ2Q Move quadword integer from XMM to MMX registers.
+PMULUDQ Multiply packed unsigned doubleword integers.
+PADDQ Add packed quadword integers.
+PSUBQ Subtract packed quadword integers.
+PSHUFLW Shuffle packed low words.
+PSHUFHW Shuffle packed high words.
+PSHUFD Shuffle packed doublewords.
+PSLLDQ Shift double quadword left logical.
+PSRLDQ Shift double quadword right logical.
+PUNPCKHQDQ Unpack high quadwords.
+PUNPCKLQDQ Unpack low quadwords.
+
 5.6.4 SSE2 Cacheability Control and Ordering Instructions
 SSE2 cacheability control instructions provide additional operations for caching of non-temporal data when storing data from XMM registers to memory. LFENCE and MFENCE provide additional control of instruction ordering on store operations.
 CLFLUSH LFENCE MFENCE PAUSE MASKMOVDQU MOVNTPD
