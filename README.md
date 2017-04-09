@@ -16,6 +16,13 @@ different cpus architectures and I figure this is the best way.
 
 * REPL for assembly? Does that even make sense?
 
+## Guido vs The Compiler
+
+Try to beat a modern C compiler (Clang probably) on a realistic test, 
+like a spreadsheet program. Would be funny to see when improvements
+to the compiler or cpus end up beating me in the future, assuming I
+can even beat the compiler.
+
 ## Resources
 
 * [shellbug](https://github.com/karttoon/shellbug) - Text-based virtual CPU using [Unicorn](http://www.unicorn-engine.org) CPU emulator framework
