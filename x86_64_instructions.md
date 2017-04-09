@@ -572,127 +572,139 @@ MINSS Return minimum scalar single-precision floating-point values.
 SSE compare instructions compare packed and scalar single-precision
 floating-point operands.
 
-CMPPS CMPSS COMISS
-UCOMISS
+CMPPS Compare packed single-precision floating-point values.
+CMPSS Compare scalar single-precision floating-point values.
+COMISS Perform ordered comparison of scalar single-precision floating-point values and set flags in EFLAGS register.
+UCOMISS Perform unordered comparison of scalar single-precision floating-point values and set flags in EFLAGS register.
 
-5.5.1.4
-Compare packed single-precision floating-point values. Compare scalar single-precision floating-point values.
-Perform ordered comparison of scalar single-precision floating-point values and set flags in EFLAGS register.
-Perform unordered comparison of scalar single-precision floating-point values and set flags in EFLAGS register.
-SSE Logical Instructions
-SSE logical instructions perform bitwise AND, AND NOT, OR, and XOR operations on packed single-precision floating-point operands.
-ANDPS ANDNPS ORPS XORPS
-5.5.1.5
-Perform bitwise logical AND of packed single-precision floating-point values. Perform bitwise logical AND NOT of packed single-precision floating-point values. Perform bitwise logical OR of packed single-precision floating-point values. Perform bitwise logical XOR of packed single-precision floating-point values.
-SSE Shuffle and Unpack Instructions
-SSE shuffle and unpack instructions shuffle or interleave single-precision floating-point values in packed single- precision floating-point operands.
+## SSE Logical Instructions
+
+SSE logical instructions perform bitwise AND, AND NOT, OR, and XOR
+operations on packed single-precision floating-point operands.
+
+ANDPS Perform bitwise logical AND of packed single-precision floating-point values.
+ANDNPS Perform bitwise logical AND NOT of packed single-precision floating-point values.
+ORPS Perform bitwise logical OR of packed single-precision floating-point values.
+XORPS Perform bitwise logical XOR of packed single-precision floating-point values.
+
+## SSE Shuffle and Unpack Instructions
+
+SSE shuffle and unpack instructions shuffle or interleave
+single-precision floating-point values in packed single- precision
+floating-point operands.
+
 SHUFPS Shuffles values in packed single-precision floating-point operands.
-INSTRUCTION SET SUMMARY
-Vol. 1 5-15
- 
-INSTRUCTION SET SUMMARY
-UNPCKHPS UNPCKLPS
-5.5.1.6
-Unpacks and interleaves the two high-order values from two single-precision floating-point operands.
-Unpacks and interleaves the two low-order values from two single-precision floating-point operands.
-SSE Conversion Instructions
-SSE conversion instructions convert packed and individual doubleword integers into packed and scalar single-preci- sion floating-point values and vice versa.
-CVTPI2PS CVTSI2SS CVTPS2PI CVTTPS2PI
-CVTSS2SI CVTTSS2SI
-5.5.2
-Convert packed doubleword integers to packed single-precision floating-point values.
-Convert doubleword integer to scalar single-precision floating-point value.
-Convert packed single-precision floating-point values to packed doubleword integers.
-Convert with truncation packed single-precision floating-point values to packed double- word integers.
-Convert a scalar single-precision floating-point value to a doubleword integer.
-Convert with truncation a scalar single-precision floating-point value to a scalar double- word integer.
-SSE MXCSR State Management Instructions
-MXCSR state management instructions allow saving and restoring the state of the MXCSR control and status register.
-LDMXCSR STMXCSR
-5.5.3
-Load MXCSR register.
-Save MXCSR register state.
-SSE 64-Bit SIMD Integer Instructions
-These SSE 64-bit SIMD integer instructions perform additional operations on packed bytes, words, or doublewords contained in MMX registers. They represent enhancements to the MMX instruction set described in Section 5.4, “MMXTM Instructions.”
-PAVGB PAVGW PEXTRW PINSRW PMAXUB PMAXSW PMINUB PMINSW PMOVMSKB PMULHUW PSADBW PSHUFW
-5.5.4
-Compute average of packed unsigned byte integers. Compute average of packed unsigned word integers. Extract word.
-Insert word.
-Maximum of packed unsigned byte integers. Maximum of packed signed word integers. Minimum of packed unsigned byte integers. Minimum of packed signed word integers. Move byte mask.
-Multiply packed unsigned integers and store high result. Compute sum of absolute differences.
-Shuffle packed integer word in MMX register.
-SSE Cacheability Control, Prefetch, and Instruction Ordering Instructions
-The cacheability control instructions provide control over the caching of non-temporal data when storing data from the MMX and XMM registers to memory. The PREFETCHh allows data to be prefetched to a selected cache level. The SFENCE instruction controls instruction ordering on store operations.
+UNPCKHPS Unpacks and interleaves the two high-order values from two single-precision floating-point operands.
+UNPCKLPS Unpacks and interleaves the two low-order values from two single-precision floating-point operands.
+
+## SSE Conversion Instructions
+
+SSE conversion instructions convert packed and individual doubleword
+integers into packed and scalar single-preci- sion floating-point
+values and vice versa.
+
+CVTPI2PS Convert packed doubleword integers to packed single-precision floating-point values.
+CVTSI2SS Convert doubleword integer to scalar single-precision floating-point value.
+CVTPS2PI Convert packed single-precision floating-point values to packed doubleword integers.
+CVTTPS2PI Convert with truncation packed single-precision floating-point values to packed double- word integers.
+CVTSS2SI Convert a scalar single-precision floating-point value to a doubleword integer.
+CVTTSS2SI Convert with truncation a scalar single-precision floating-point value to a scalar double- word integer.
+
+## SSE MXCSR State Management Instructions
+
+MXCSR state management instructions allow saving and restoring the
+state of the MXCSR control and status register.
+
+LDMXCSR Load MXCSR register.
+STMXCSR Save MXCSR register state.
+
+## SSE 64-Bit SIMD Integer Instructions
+
+These SSE 64-bit SIMD integer instructions perform additional
+operations on packed bytes, words, or doublewords contained in MMX
+registers. They represent enhancements to the MMX instruction set
+described in Section 5.4, “MMXTM Instructions.”
+
+PAVGB Compute average of packed unsigned byte integers.
+PAVGW Compute average of packed unsigned word integers.
+PEXTRW Extract word.
+PINSRW Insert word.
+PMAXUB Maximum of packed unsigned byte integers.
+PMAXSW Maximum of packed signed word integers.
+PMINUB Minimum of packed unsigned byte integers.
+PMINSW Minimum of packed signed word integers.
+PMOVMSKB Move byte mask.
+PMULHUW Multiply packed unsigned integers and store high result.
+PSADBW Compute sum of absolute differences.
+PSHUFW Shuffle packed integer word in MMX register.
+
+## SSE Cacheability Control, Prefetch, and Instruction Ordering Instructions
+
+The cacheability control instructions provide control over the caching
+of non-temporal data when storing data from the MMX and XMM registers
+to memory. The PREFETCHh allows data to be prefetched to a selected
+cache level. The SFENCE instruction controls instruction ordering on
+store operations.
+
 MASKMOVQ Non-temporal store of selected bytes from an MMX register into memory.
-5-16 Vol. 1
- 
-MOVNTQ MOVNTPS
-PREFETCHh SFENCE
-Non-temporal store of quadword from an MMX register into memory.
-Non-temporal store of four packed single-precision floating-point values from an XMM register into memory.
-Load 32 or more of bytes from memory to a selected level of the processor’s cache hier- archy
-Serializes store operations.
-5.6 SSE2INSTRUCTIONS
-SSE2 extensions represent an extension of the SIMD execution model introduced with MMX technology and the SSE extensions. SSE2 instructions operate on packed double-precision floating-point operands and on packed byte, word, doubleword, and quadword operands located in the XMM registers. For more detail on these instruc- tions, see Chapter 11, “Programming with Intel® Streaming SIMD Extensions 2 (Intel® SSE2).”
-SSE2 instructions can only be executed on Intel 64 and IA-32 processors that support the SSE2 extensions. Support for these instructions can be detected with the CPUID instruction. See the description of the CPUID instruction in Chapter 3, “Instruction Set Reference, A-L,” of the Intel® 64 and IA-32 Architectures Software Developer’s Manual, Volume 2A.
-These instructions are divided into four subgroups (note that the first subgroup is further divided into subordinate subgroups):
-• Packed and scalar double-precision floating-point instructions.
-• Packed single-precision floating-point conversion instructions.
-• 128-bit SIMD integer instructions.
-• Cacheability-control and instruction ordering instructions.
-The following sections give an overview of each subgroup.
-5.6.1 SSE2 Packed and Scalar Double-Precision Floating-Point Instructions
-SSE2 packed and scalar double-precision floating-point instructions are divided into the following subordinate subgroups: data movement, arithmetic, comparison, conversion, logical, and shuffle operations on double-preci- sion floating-point operands. These are introduced in the sections that follow.
-5.6.1.1 SSE2 Data Movement Instructions
-SSE2 data movement instructions move double-precision floating-point data between XMM registers and between XMM registers and memory.
-MOVAPD MOVUPD MOVHPD MOVLPD
-MOVMSKPD MOVSD
-Move two aligned packed double-precision floating-point values between XMM registers or between and XMM register and memory.
-Move two unaligned packed double-precision floating-point values between XMM registers or between and XMM register and memory.
-Move high packed double-precision floating-point value to an from the high quadword of an XMM register and memory.
-Move low packed single-precision floating-point value to an from the low quadword of an XMM register and memory.
-Extract sign mask from two packed double-precision floating-point values.
-Move scalar double-precision floating-point value between XMM registers or between an XMM register and memory.
-INSTRUCTION SET SUMMARY
-Vol. 1 5-17
- 
-INSTRUCTION SET SUMMARY
-5.6.1.2 SSE2 Packed Arithmetic Instructions
-The arithmetic instructions perform addition, subtraction, multiply, divide, square root, and maximum/minimum operations on packed and scalar double-precision floating-point operands.
-ADDPD ADDSD SUBPD SUBSD MULPD MULSD DIVPD DIVSD SQRTPD SQRTSD MAXPD MAXSD MINPD MINSD
-5.6.1.3
-Add packed double-precision floating-point values.
-Add scalar double precision floating-point values.
-Subtract scalar double-precision floating-point values.
-Subtract scalar double-precision floating-point values.
-Multiply packed double-precision floating-point values.
-Multiply scalar double-precision floating-point values.
-Divide packed double-precision floating-point values.
-Divide scalar double-precision floating-point values.
-Compute packed square roots of packed double-precision floating-point values. Compute scalar square root of scalar double-precision floating-point values. Return maximum packed double-precision floating-point values.
-Return maximum scalar double-precision floating-point values. Return minimum packed double-precision floating-point values. Return minimum scalar double-precision floating-point values.
-SSE2 Logical Instructions
-SSE2 logical instructions preform AND, AND NOT, OR, and XOR operations on packed double-precision floating- point values.
-ANDPD ANDNPD ORPD XORPD
-5.6.1.4
-Perform bitwise logical AND of packed double-precision floating-point values. Perform bitwise logical AND NOT of packed double-precision floating-point values. Perform bitwise logical OR of packed double-precision floating-point values. Perform bitwise logical XOR of packed double-precision floating-point values.
-SSE2 Compare Instructions
-SSE2 compare instructions compare packed and scalar double-precision floating-point values and return the results of the comparison either to the destination operand or to the EFLAGS register.
-CMPPD CMPSD COMISD
-UCOMISD
-5.6.1.5
-Compare packed double-precision floating-point values. Compare scalar double-precision floating-point values.
-Perform ordered comparison of scalar double-precision floating-point values and set flags in EFLAGS register.
-Perform unordered comparison of scalar double-precision floating-point values and set flags in EFLAGS register.
-SSE2 Shuffle and Unpack Instructions
-SSE2 shuffle and unpack instructions shuffle or interleave double-precision floating-point values in packed double- precision floating-point operands.
-SHUFPD UNPCKHPD
-UNPCKLPD
-Shuffles values in packed double-precision floating-point operands.
-Unpacks and interleaves the high values from two packed double-precision floating-point operands.
-Unpacks and interleaves the low values from two packed double-precision floating-point operands.
-5-18 Vol. 1
- 
+MOVNTQ Non-temporal store of quadword from an MMX register into memory.
+MOVNTPS Non-temporal store of four packed single-precision floating-point values from an XMM register into memory.
+PREFETCHh Load 32 or more of bytes from memory to a selected level of the processor’s cache hierarchy
+SFENCE Serializes store operations.
+
+SSE2 Data Movement Instructions
+
+SSE2 data movement instructions move double-precision floating-point
+data between XMM registers and between XMM registers and memory.
+
+MOVAPD Move two aligned packed double-precision floating-point values between XMM registers or between and XMM register and memory.
+MOVUPD Move two unaligned packed double-precision floating-point values between XMM registers or between and XMM register and memory.
+MOVHPD Move high packed double-precision floating-point value to an from the high quadword of an XMM register and memory.
+MOVLPD Move low packed single-precision floating-point value to an from the low quadword of an XMM register and memory.
+MOVMSKPD Extract sign mask from two packed double-precision floating-point values.
+MOVSD Move scalar double-precision floating-point value between XMM registers or between an XMM register and memory.
+
+## SSE2 Packed Arithmetic Instructions
+
+The arithmetic instructions perform addition, subtraction, multiply,
+divide, square root, and maximum/minimum operations on packed and
+scalar double-precision floating-point operands.
+
+ADDPD Add packed double-precision floating-point values.
+ADDSD Add scalar double precision floating-point values.
+SUBPD Subtract scalar double-precision floating-point values.
+SUBSD Subtract scalar double-precision floating-point values.
+MULPD Multiply packed double-precision floating-point values.
+MULSD Multiply scalar double-precision floating-point values.
+DIVPD Divide packed double-precision floating-point values.
+DIVSD Divide scalar double-precision floating-point values.
+SQRTPD Compute packed square roots of packed double-precision floating-point values. 
+SQRTSD Compute scalar square root of scalar double-precision floating-point values. 
+MAXPD Return maximum packed double-precision floating-point values.
+MAXSD Return maximum scalar double-precision floating-point values.
+MINPD Return minimum packed double-precision floating-point values.
+MINSD Return minimum scalar double-precision floating-point values.
+
+## SSE2 Logical Instructions
+
+SSE2 logical instructions preform AND, AND NOT, OR, and XOR operations
+on packed double-precision floating- point values.
+
+ANDPD Perform bitwise logical AND of packed double-precision floating-point values.
+ANDNPD Perform bitwise logical AND NOT of packed double-precision floating-point values.
+ORPD Perform bitwise logical OR of packed double-precision floating-point values.
+XORPD Perform unordered comparison of scalar double-precision floating-point values and set flags in EFLAGS register.
+
+## SSE2 Shuffle and Unpack Instructions
+
+SSE2 shuffle and unpack instructions shuffle or interleave
+double-precision floating-point values in packed double-precision
+floating-point operands.
+
+SHUFPD Shuffles values in packed double-precision floating-point operands.
+UNPCKHPD Unpacks and interleaves the high values from two packed double-precision floating-point operands.
+UNPCKLPD Unpacks and interleaves the low values from two packed double-precision floating-point operands.
+
 5.6.1.6 SSE2 Conversion Instructions
 SSE2 conversion instructions convert packed and individual doubleword integers into packed and scalar double- precision floating-point values and vice versa. They also convert between packed and scalar single-precision and double-precision floating-point values.
 CVTPD2PI CVTTPD2PI
