@@ -492,83 +492,89 @@ PMULHW Multiply packed signed word integers and store high result.
 PMULLW Multiply packed signed word integers and store low result.
 PMADDWD Multiply and add packed word integers.
 
-MMX Comparison Instructions
+## MMX Comparison Instructions
+
 The compare instructions compare packed bytes, words, or doublewords.
-PCMPEQB PCMPEQW PCMPEQD PCMPGTB PCMPGTW PCMPGTD
-5.4.5
-Compare packed bytes for equal.
-Compare packed words for equal.
-Compare packed doublewords for equal.
-Compare packed signed byte integers for greater than. Compare packed signed word integers for greater than. Compare packed signed doubleword integers for greater than.
-MMX Logical Instructions
-The logical instructions perform AND, AND NOT, OR, and XOR operations on quadword operands.
-PAND PANDN POR PXOR
-5.4.6
-Bitwise logical AND.
-Bitwise logical AND NOT. Bitwise logical OR.
-Bitwise logical exclusive OR.
-MMX Shift and Rotate Instructions
-The shift and rotate instructions shift and rotate packed bytes, words, or doublewords, or quadwords in 64-bit operands.
-PSLLW PSLLD PSLLQ PSRLW PSRLD PSRLQ
-Shift packed words left logical.
-Shift packed doublewords left logical. Shift packed quadword left logical. Shift packed words right logical.
-Shift packed doublewords right logical. Shift packed quadword right logical.
-INSTRUCTION SET SUMMARY
-Vol. 1 5-13
- 
-INSTRUCTION SET SUMMARY
-PSRAW PSRAD
-5.4.7
-Shift packed words right arithmetic.
-Shift packed doublewords right arithmetic.
-MMX State Management Instructions
-The EMMS instruction clears the MMX state from the MMX registers. EMMS Empty MMX state.
-5.5 SSE INSTRUCTIONS
-SSE instructions represent an extension of the SIMD execution model introduced with the MMX technology. For more detail on these instructions, see Chapter 10, “Programming with Intel® Streaming SIMD Extensions (Intel® SSE).”
-SSE instructions can only be executed on Intel 64 and IA-32 processors that support SSE extensions. Support for these instructions can be detected with the CPUID instruction. See the description of the CPUID instruction in Chapter 3, “Instruction Set Reference, A-L,” of the Intel® 64 and IA-32 Architectures Software Developer’s Manual, Volume 2A.
-SSE instructions are divided into four subgroups (note that the first subgroup has subordinate subgroups of its own):
-• SIMD single-precision floating-point instructions that operate on the XMM registers.
-• MXCSR state management instructions.
-• 64-bit SIMD integer instructions that operate on the MMX registers.
-• Cacheability control, prefetch, and instruction ordering instructions.
-The following sections provide an overview of these groups.
-5.5.1 SSE SIMD Single-Precision Floating-Point Instructions
-These instructions operate on packed and scalar single-precision floating-point values located in XMM registers and/or memory. This subgroup is further divided into the following subordinate subgroups: data transfer, packed arithmetic, comparison, logical, shuffle and unpack, and conversion instructions.
-5.5.1.1 SSE Data Transfer Instructions
-SSE data transfer instructions move packed and scalar single-precision floating-point operands between XMM registers and between XMM registers and memory.
-MOVAPS MOVUPS MOVHPS MOVHLPS MOVLPS MOVLHPS MOVMSKPS
-Move four aligned packed single-precision floating-point values between XMM registers or between and XMM register and memory.
-Move four unaligned packed single-precision floating-point values between XMM registers or between and XMM register and memory.
-Move two packed single-precision floating-point values to an from the high quadword of an XMM register and memory.
-Move two packed single-precision floating-point values from the high quadword of an XMM register to the low quadword of another XMM register.
-Move two packed single-precision floating-point values to an from the low quadword of an XMM register and memory.
-Move two packed single-precision floating-point values from the low quadword of an XMM register to the high quadword of another XMM register.
-Extract sign mask from four packed single-precision floating-point values.
-5-14 Vol. 1
- 
+
+PCMPEQB Compare packed bytes for equal.
+PCMPEQW Compare packed words for equal.
+PCMPEQD Compare packed doublewords for equal.
+PCMPGTB Compare packed signed byte integers for greater than.
+PCMPGTW Compare packed signed word integers for greater than.
+PCMPGTD Compare packed signed doubleword integers for greater than.
+
+## MMX Logical Instructions
+
+The logical instructions perform AND, AND NOT, OR, and XOR operations
+on quadword operands.
+
+PAND Bitwise logical AND.
+PANDN Bitwise logical AND NOT.
+POR Bitwise logical OR.
+PXOR Bitwise logical exclusive OR.
+
+## MMX Shift and Rotate Instructions
+
+The shift and rotate instructions shift and rotate packed bytes,
+words, or doublewords, or quadwords in 64-bit operands.
+
+PSLLW Shift packed words left logical.
+PSLLD Shift packed doublewords left logical.
+PSLLQ Shift packed quadword left logical.
+PSRLW Shift packed words right logical.
+PSRLD Shift packed doublewords right logical.
+PSRLQ Shift packed quadword right logical.
+PSRAW Shift packed words right arithmetic.
+PSRAD Shift packed doublewords right arithmetic.
+
+## SSE Data Transfer Instructions
+
+SSE data transfer instructions move packed and scalar single-precision
+floating-point operands between XMM registers and between XMM
+registers and memory.
+
+MOVAPS Move four aligned packed single-precision floating-point values between XMM registers or between and XMM register and memory.
+MOVUPS Move four unaligned packed single-precision floating-point values between XMM registers or between and XMM register and memory.
+MOVHPS Move two packed single-precision floating-point values to an from the high quadword of an XMM register and memory.
+MOVHLPS Move two packed single-precision floating-point values from the high quadword of an XMM register to the low quadword of another XMM register.
+MOVLPS Move two packed single-precision floating-point values to an from the low quadword of an XMM register and memory.
+MOVLHPS Move two packed single-precision floating-point values from the low quadword of an XMM register to the high quadword of another XMM register.
+MOVMSKPS Extract sign mask from four packed single-precision floating-point values.
 MOVSS Move scalar single-precision floating-point value between XMM registers or between an XMM register and memory.
-5.5.1.2 SSE Packed Arithmetic Instructions
-SSE packed arithmetic instructions perform packed and scalar arithmetic operations on packed and scalar single- precision floating-point operands.
-ADDPS ADDSS SUBPS SUBSS MULPS MULSS DIVPS DIVSS RCPPS RCPSS SQRTPS SQRTSS RSQRTPS RSQRTSS MAXPS MAXSS MINPS MINSS
-5.5.1.3
-Add packed single-precision floating-point values.
-Add scalar single-precision floating-point values.
-Subtract packed single-precision floating-point values.
-Subtract scalar single-precision floating-point values.
-Multiply packed single-precision floating-point values.
-Multiply scalar single-precision floating-point values.
-Divide packed single-precision floating-point values.
-Divide scalar single-precision floating-point values.
-Compute reciprocals of packed single-precision floating-point values.
-Compute reciprocal of scalar single-precision floating-point values.
-Compute square roots of packed single-precision floating-point values.
-Compute square root of scalar single-precision floating-point values.
-Compute reciprocals of square roots of packed single-precision floating-point values. Compute reciprocal of square root of scalar single-precision floating-point values. Return maximum packed single-precision floating-point values.
-Return maximum scalar single-precision floating-point values. Return minimum packed single-precision floating-point values. Return minimum scalar single-precision floating-point values.
-SSE Comparison Instructions
-SSE compare instructions compare packed and scalar single-precision floating-point operands.
+
+## SSE Packed Arithmetic Instructions
+
+SSE packed arithmetic instructions perform packed and scalar
+arithmetic operations on packed and scalar single-precision
+floating-point operands.
+
+ADDPS Add packed single-precision floating-point values.
+ADDSS Add scalar single-precision floating-point values.
+SUBPS Subtract packed single-precision floating-point values.
+SUBSS Subtract scalar single-precision floating-point values.
+MULPS Multiply packed single-precision floating-point values.
+MULSS Multiply scalar single-precision floating-point values.
+DIVPS Divide packed single-precision floating-point values.
+DIVSS Divide scalar single-precision floating-point values.
+RCPPS Compute reciprocals of packed single-precision floating-point values.
+RCPSS Compute reciprocal of scalar single-precision floating-point values.
+SQRTPS Compute square roots of packed single-precision floating-point values.
+SQRTSS Compute square root of scalar single-precision floating-point values.
+RSQRTPS Compute reciprocals of square roots of packed single-precision floating-point values.
+RSQRTSS Compute reciprocal of square root of scalar single-precision floating-point values.
+MAXPS Return maximum packed single-precision floating-point values.
+MAXSS Return maximum scalar single-precision floating-point values.
+MINPS Return minimum packed single-precision floating-point values.
+MINSS Return minimum scalar single-precision floating-point values.
+
+## SSE Comparison Instructions
+
+SSE compare instructions compare packed and scalar single-precision
+floating-point operands.
+
 CMPPS CMPSS COMISS
 UCOMISS
+
 5.5.1.4
 Compare packed single-precision floating-point values. Compare scalar single-precision floating-point values.
 Perform ordered comparison of scalar single-precision floating-point values and set flags in EFLAGS register.
